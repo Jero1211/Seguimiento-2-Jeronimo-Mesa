@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Incidencias | Hernán Ocazionez</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --verde-neon: #adff2f;
+            --negro-profundo: #050505;
+            --negro-tarjeta: #111111;
+        }
+        body { background-color: var(--negro-profundo); color: #e5e7eb; font-family: 'Inter', sans-serif; }
+        .text-neon { color: var(--verde-neon); text-shadow: 0 0 10px rgba(173, 255, 47, 0.3); }
+        .card-custom { background-color: var(--negro-tarjeta); border: 1px solid #222; transition: all 0.3s ease; }
+        .card-custom:hover { border-color: var(--verde-neon); transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+
+    <nav class="border-b border-white/5 py-6 px-10 bg-black/80 backdrop-blur-lg sticky top-0 z-50 flex justify-between items-center">
+        <div class="text-xl font-black tracking-tighter italic">
+            R.I.<span class="text-neon">H.O</span>
+        </div>
+        <div class="space-x-8 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#problema" class="hover:text-neon transition">El Problema</a>
+            <a href="#flujo" class="hover:text-neon transition">Flujo Operativo</a>
+            <a href="#metodologia" class="hover:text-neon transition">Metodología</a>
+        </div>
+    </nav>
+
+    <header class="py-32 px-6 text-center">
+        <h1 class="text-6xl font-black mb-6 tracking-tight">REPORTE DE INCIDENCIAS <br> <span class="text-neon">HERNÁN OCAZIONEZ</span></h1>
+        <p class="max-w-3xl mx-auto text-gray-500 text-xl leading-relaxed">
+            Plataforma centralizada para la gestión, trazabilidad y optimización operativa del departamento de TI.
+        </p>
+    </header>
+
+    <section id="problema" class="py-20 px-6 max-w-6xl mx-auto border-t border-white/5">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-neon font-bold uppercase tracking-widest text-xs mb-4">Planteamiento</h2>
+                <h3 class="text-4xl font-bold mb-8">Gestión de Incidencias en Hernán Ocazionez</h3>
+                <p class="text-gray-400 mb-6 text-lg">
+                    La empresa dependía de canales informales (chats y llamadas), lo que impedía la <strong>trazabilidad</strong>. Sin un reporte centralizado, los incidentes críticos carecían de métricas de desempeño y seguimiento.
+                </p>
+            </div>
+            <div class="card-custom p-10 rounded-3xl">
+                <h4 class="text-neon font-bold mb-4 uppercase text-xs">Objetivo</h4>
+                <p class="text-sm leading-relaxed text-gray-300">
+                    Centralizar el reporte de incidencias para asegurar que cada falla tenga un responsable, un tiempo de respuesta medible y una solución documentada bajo estándares ITIL.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="flujo" class="py-20 bg-white/[0.01]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-neon text-center font-bold uppercase tracking-widest text-xs mb-4">Flujo Operativo</h2>
+            <h3 class="text-4xl text-center font-bold mb-16">Arquitectura del Reporte</h3>
+            
+            <div class="bg-white/5 p-10 rounded-3xl border border-white/10 overflow-x-auto">
+                <div class="mermaid">
+                    graph LR
+                    U((Reporte Incidencia)) --> F[Formulario Web]
+                    F --> L{Categorización ITIL}
+                    L --> D[Dashboard TI]
+                    D --> T[Gestión Técnica]
+                    T --> S{¿Resuelto?}
+                    S -- No --> E[Escalamiento]
+                    E --> T
+                    S -- Si --> C[Cierre y Métricas]
+                    C --> Fin((Fin))
+
+                    style U fill:#adff2f,color:#000
+                    style Fin fill:#adff2f,color:#000
+                    style D fill:#111,stroke:#adff2f,color:#fff
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metodologia" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-neon text-center font-bold uppercase tracking-widest text-xs mb-4">Ciclo de Vida</h2>
+        <h3 class="text-4xl text-center font-bold mb-20">Metodología de Desarrollo</h3>
+        
+        <div class="grid md:grid-cols-4 gap-4">
+            <div class="card-custom p-8 rounded-xl">
+                <div class="text-neon text-xs font-mono mb-4">01. ANÁLISIS</div>
+                <h4 class="text-lg font-bold mb-4">Planificación</h4>
+                <p class="text-xs text-gray-500">Definición de requisitos funcionales y arquitectura base para el reporte de incidencias.</p>
+            </div>
+            <div class="card-custom p-8 rounded-xl">
+                <div class="text-neon text-xs font-mono mb-4">02. DESARROLLO</div>
+                <h4 class="text-lg font-bold mb-4">Prototipado</h4>
+                <p class="text-xs text-gray-500">Implementación bajo el marco SCRUM para crear un MVP ágil para los usuarios.</p>
+            </div>
+            <div class="card-custom p-8 rounded-xl">
+                <div class="text-neon text-xs font-mono mb-4">03. PRUEBAS</div>
+                <h4 class="text-lg font-bold mb-4">Validación</h4>
+                <p class="text-xs text-gray-500">Aplicación de DevSecOps para asegurar la integridad de la información reportada.</p>
+            </div>
+            <div class="card-custom p-8 rounded-xl">
+                <div class="text-neon text-xs font-mono mb-4">04. LANZAMIENTO</div>
+                <h4 class="text-lg font-bold mb-4">Despliegue</h4>
+                <p class="text-xs text-gray-500">Puesta en marcha, migración y entrega de métricas operativas finales.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'dark',
+            themeVariables: { primaryColor: '#adff2f', lineColor: '#adff2f', textColor: '#fff' }
+        });
+    </script>
+</body>
+</html>
